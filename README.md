@@ -2,6 +2,8 @@
 
 Simple application for a coding challange.
 
+![ezgif com-video-to-gif](https://user-images.githubusercontent.com/34924300/60342598-90bd6500-9977-11e9-9def-807b3805386c.gif)
+
 ## Tech Stack
 
 * [React Native](https://facebook.github.io/react-native/)
