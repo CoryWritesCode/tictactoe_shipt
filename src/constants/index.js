@@ -16,20 +16,23 @@ export const TEXT = {
 	PONE_WINNER: 'Player 1 Wins!',
 	PTWO_WINNER: 'Player 2 Wins!',
 	DRAW: 'No one wins!',
-	RESET: 'Reset the game.'
+	RESET: 'Reset the game.',
+	BOX: 'Square in quadrant '
 };
 
 export const COLORS = {
 	LIGHT: {
-		SECONDARY: '#666',
+		SECONDARY: '#666666',
 		PRIMARY: '#74DBFF',
 		BACKGROUND: '#E5ECEF',
-		APP_BACKGROUND: '#F5FCFF'
+		APP_BACKGROUND: '#F5FCFF',
+		TEXT: '#111111'
 	},
 	DARK: {
-		SECONDARY: '#666',
+		SECONDARY: '#666666',
 		PRIMARY: '#74DBFF',
 		BACKGROUND: '#E5ECEF',
-		APP_BACKGROUND: '#F5FCFF'
+		APP_BACKGROUND: '#F5FCFF',
+		TEXT: '#111111'
 	}
 };

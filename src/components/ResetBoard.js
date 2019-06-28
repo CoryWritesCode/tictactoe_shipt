@@ -12,7 +12,7 @@ function ResetBoard(props) {
 			accessibilityLabel={TEXT.RESET}
 			onPress={props.handlePress}
 		>
-			<Text>Reset</Text>
+			<Text cls='#111'>Reset</Text>
 		</TouchableOpacity>
 	);
 }

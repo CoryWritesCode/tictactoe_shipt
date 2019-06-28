@@ -28,13 +28,13 @@ function GameBoard() {
 	let usedSpace = isPlayerOne ? xSpace : oSpace;
 
 	return (
-		<View key={keyReset} cls='flx-i aic jcc'>
+		<View cls='flx-i aic jcc'>
 			<View
 				accessibilityLabel={TEXT.WELCOME_TEXT}
 				cls='aic mv3 pv2'
 				style={styles.welcome}
 			>
-				<Text cls='f3'>{TEXT.WELCOME_TEXT}</Text>
+				<Text cls='f4 #111'>{TEXT.WELCOME_TEXT}</Text>
 			</View>
 			<View cls='mh3 mv2 flx-row ba br1'>
 				{isGameOver ? (
@@ -44,25 +44,25 @@ function GameBoard() {
 				)}
 			</View>
 			<View
+				accessible={true}
+				key={keyReset}
 				style={styles.gameboard}
 				cls='jcc aic flx-i flx-wrap flx-row pa2 aic'
 			>
 				{BOXES.map(box => (
-					<View key={keyReset}>
-						<Box
-							key={box}
-							boxNumber={box}
-							player={isPlayerOne}
-							playerState={setIsPlayerOne}
-							turns={turns}
-							setTurns={setTurns}
-							usedSpace={usedSpace}
-							setGame={setIsGameOver}
-							setWinner={setIsWinner}
-							isOver={isGameOver}
-							winner={isWinner}
-						/>
-					</View>
+					<Box
+						key={box}
+						boxNumber={box}
+						player={isPlayerOne}
+						playerState={setIsPlayerOne}
+						turns={turns}
+						setTurns={setTurns}
+						usedSpace={usedSpace}
+						setGame={setIsGameOver}
+						setWinner={setIsWinner}
+						isOver={isGameOver}
+						winner={isWinner}
+					/>
 				))}
 				<View>
 					<ResetBoard

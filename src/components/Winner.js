@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
 function Winner(props) {
 	return (
 		<View cls='flx-row jcc' style={styles.text}>
-			<Text cls='f6'>{props.winner}</Text>
+			<Text cls='f6 #111'>{props.winner}</Text>
 		</View>
 	);
 }

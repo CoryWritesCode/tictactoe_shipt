@@ -6,7 +6,8 @@ import { COLORS } from '../constants';
 
 const styles = StyleSheet.create({
 	activePlayer: {
-		backgroundColor: COLORS.LIGHT.PRIMARY
+		backgroundColor: COLORS.LIGHT.PRIMARY,
+		color: COLORS.LIGHT.TEXT
 	},
 	inactivePlayer: {
 		color: COLORS.LIGHT.SECONDARY

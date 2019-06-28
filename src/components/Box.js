@@ -53,9 +53,18 @@ function Box(props) {
 		}
 	}
 
+	let ally = TEXT.BOX + props.boxNumber.toString();
+	let allyLabel = value != '' ? ally + '. Currenty filled by ' + value : ally;
+
 	return (
-		<TouchableOpacity cls={tachyonStyle} onPress={pressBox} activeOpacity={1}>
-			<Text cls='f3'>{value}</Text>
+		<TouchableOpacity
+			accessibilityRole='button'
+			accessibilityLabel={allyLabel}
+			cls={tachyonStyle}
+			onPress={pressBox}
+			activeOpacity={1}
+		>
+			<Text cls='f3 #111'>{value}</Text>
 		</TouchableOpacity>
 	);
 }
