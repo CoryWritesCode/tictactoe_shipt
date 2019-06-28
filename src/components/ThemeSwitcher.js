@@ -8,11 +8,13 @@ function ThemeSwitcher(props) {
 		<View>
 			<TouchableOpacity
 				style={{ backgroundColor: props.theme.prim, width: 130 }}
-				cls='ba pv1 br5 aic'
+				cls='ba pv1 br5 aic mb3'
 				onPress={props.handlePress}
 				activeOpacity={1}
 			>
-				<Text>Theme: {props.theme.key}</Text>
+				<Text style={{ color: props.theme.text }}>
+					Theme: {props.theme.key}
+				</Text>
 			</TouchableOpacity>
 		</View>
 	);
