@@ -13,13 +13,16 @@ const styles = StyleSheet.create({
 function Winner(props) {
 	return (
 		<View cls='flx-row jcc' style={styles.text}>
-			<Text cls='f6 #111'>{props.winner}</Text>
+			<Text cls='f6' style={{ color: props.theme.text }}>
+				{props.winner}
+			</Text>
 		</View>
 	);
 }
 
 Winner.propTypes = {
-	winner: PropTypes.string.isRequired
+	winner: PropTypes.string.isRequired,
+	theme: PropTypes.string
 };
 
 export default NativeTachyons.wrap(Winner);

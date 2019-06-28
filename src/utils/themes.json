@@ -1,0 +1,26 @@
+[
+	{
+		"key": "LIGHT",
+		"sec": "#666666",
+		"prim": "#74DBFF",
+		"bkgd": "#E5ECEF",
+		"appBkgd": "#F5FCFF",
+		"text": "#111111"
+	},
+	{
+		"key": "DARK",
+		"sec": "#E5ECEF",
+		"prim": "#E2287B",
+		"bkgd": "#666666",
+		"appBkgd": "#555555",
+		"text": "#F5FCFF"
+	},
+	{
+		"key": "LIT",
+		"sec": "#E5ECEF",
+		"prim": "#34FF98",
+		"bkgd": "#FF4598",
+		"appBkgd": "#E2287B",
+		"text": "#0A0A0A"
+	}
+]

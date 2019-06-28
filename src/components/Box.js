@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import NativeTachyons from 'react-native-style-tachyons';
-import { Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { Text, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
 import { WINNERS, TEXT } from '../constants';
-
-const styles = StyleSheet.create({});
 
 function Box(props) {
 	const [value, setValue] = useState('');
@@ -64,18 +62,25 @@ function Box(props) {
 			onPress={pressBox}
 			activeOpacity={1}
 		>
-			<Text cls='f3 #111'>{value}</Text>
+			<Text cls='f3' style={{ color: props.theme.text }}>
+				{value}
+			</Text>
 		</TouchableOpacity>
 	);
 }
 
 Box.propTypes = {
-	player: PropTypes.bool,
-	boxNumber: PropTypes.number,
-	playerState: PropTypes.func,
-	turns: PropTypes.number,
-	setTurns: PropTypes.func,
-	usedSpace: PropTypes.array
+	player: PropTypes.bool.isRequired,
+	boxNumber: PropTypes.number.isRequired,
+	playerState: PropTypes.func.isRequired,
+	turns: PropTypes.number.isRequired,
+	setTurns: PropTypes.func.isRequired,
+	usedSpace: PropTypes.array.isRequired,
+	setGame: PropTypes.func.isRequired,
+	setWinner: PropTypes.func.isRequired,
+	isOver: PropTypes.bool.isRequired,
+	winner: PropTypes.string.isRequired,
+	theme: PropTypes.string.isRequired
 };
 
 export default NativeTachyons.wrap(Box);

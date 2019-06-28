@@ -19,20 +19,3 @@ export const TEXT = {
 	RESET: 'Reset the game.',
 	BOX: 'Square in quadrant '
 };
-
-export const COLORS = {
-	LIGHT: {
-		SECONDARY: '#666666',
-		PRIMARY: '#74DBFF',
-		BACKGROUND: '#E5ECEF',
-		APP_BACKGROUND: '#F5FCFF',
-		TEXT: '#111111'
-	},
-	DARK: {
-		SECONDARY: '#666666',
-		PRIMARY: '#74DBFF',
-		BACKGROUND: '#E5ECEF',
-		APP_BACKGROUND: '#F5FCFF',
-		TEXT: '#111111'
-	}
-};

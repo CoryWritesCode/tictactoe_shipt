@@ -11,15 +11,17 @@ function ResetBoard(props) {
 			accessibilityRole='button'
 			accessibilityLabel={TEXT.RESET}
 			onPress={props.handlePress}
+			style={{ backgroundColor: props.theme.prim }}
 		>
-			<Text cls='#111'>Reset</Text>
+			<Text style={{ color: props.theme.text }}>Reset</Text>
 		</TouchableOpacity>
 	);
 }
 
 ResetBoard.propTypes = {
 	handlePress: PropTypes.func.isRequired,
-	state: PropTypes.func
+	state: PropTypes.func,
+	theme: PropTypes.string.isRequired
 };
 
 export default NativeTachyons.wrap(ResetBoard);
