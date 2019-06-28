@@ -53,10 +53,11 @@ function Box(props) {
 
 	let ally = TEXT.BOX + props.boxNumber.toString();
 	let allyLabel = value != '' ? ally + '. Currenty filled by ' + value : ally;
+	let allyRole = value == '' ? 'button' : 'none';
 
 	return (
 		<TouchableOpacity
-			accessibilityRole='button'
+			accessibilityRole={allyRole}
 			accessibilityLabel={allyLabel}
 			cls={tachyonStyle}
 			onPress={pressBox}

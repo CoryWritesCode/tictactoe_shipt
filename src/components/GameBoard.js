@@ -1,11 +1,5 @@
 import React, { useState } from 'react';
-import {
-	View,
-	Text,
-	StyleSheet,
-	TouchableOpacity,
-	SafeAreaView
-} from 'react-native';
+import { View, Text, StyleSheet, SafeAreaView } from 'react-native';
 import NativeTachyons from 'react-native-style-tachyons';
 import Box from './Box';
 import { BOXES, TEXT } from '../constants';
@@ -47,7 +41,6 @@ function GameBoard() {
 					)}
 				</View>
 				<View
-					accessible={true}
 					key={keyReset}
 					style={styles.gameboard}
 					cls='jcc aic flx-i flx-wrap flx-row pa2 aic'

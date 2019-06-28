@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import NativeTachyons from 'react-native-style-tachyons';
 
 function ThemeSwitcher(props) {
+	let ally = 'Current Theme is ' + props.theme.key + '. Press to change!';
 	return (
 		<View>
 			<TouchableOpacity
@@ -11,6 +12,8 @@ function ThemeSwitcher(props) {
 				cls='ba pv1 br5 aic mb3'
 				onPress={props.handlePress}
 				activeOpacity={1}
+				accessibilityRole='button'
+				accessibilityLabel={ally}
 			>
 				<Text style={{ color: props.theme.text }}>
 					Theme: {props.theme.key}
