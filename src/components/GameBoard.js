@@ -71,7 +71,7 @@ function GameBoard() {
 							setTurns(0);
 							setIsGameOver(false);
 							setIsPlayerOne(true);
-							setIsWinner();
+							setIsWinner('');
 							setXSpace([]);
 							setOSpace([]);
 						}}
