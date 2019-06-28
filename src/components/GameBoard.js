@@ -24,10 +24,11 @@ function GameBoard() {
 	const [isGameOver, setIsGameOver] = useState(false);
 	const [xSpace, setXSpace] = useState([]);
 	const [oSpace, setOSpace] = useState([]);
+	const [keyReset, setKeyReset] = useState(1);
 	let usedSpace = isPlayerOne ? xSpace : oSpace;
 
 	return (
-		<View cls='flx-i aic jcc'>
+		<View key={keyReset} cls='flx-i aic jcc'>
 			<View
 				accessibilityLabel={TEXT.WELCOME_TEXT}
 				cls='aic mv3 pv2'
@@ -47,21 +48,33 @@ function GameBoard() {
 				cls='jcc aic flx-i flx-wrap flx-row pa2 aic'
 			>
 				{BOXES.map(box => (
-					<Box
-						key={box}
-						boxNumber={box}
-						player={isPlayerOne}
-						playerState={setIsPlayerOne}
-						turns={turns}
-						setTurns={setTurns}
-						usedSpace={usedSpace}
-						setGame={setIsGameOver}
-						setWinner={setIsWinner}
-						isOver={isGameOver}
-					/>
+					<View key={keyReset}>
+						<Box
+							key={box}
+							boxNumber={box}
+							player={isPlayerOne}
+							playerState={setIsPlayerOne}
+							turns={turns}
+							setTurns={setTurns}
+							usedSpace={usedSpace}
+							setGame={setIsGameOver}
+							setWinner={setIsWinner}
+							isOver={isGameOver}
+						/>
+					</View>
 				))}
 				<View>
-					<ResetBoard />
+					<ResetBoard
+						handlePress={() => {
+							setKeyReset(keyReset + 1);
+							setTurns(0);
+							setIsGameOver(false);
+							setIsPlayerOne(true);
+							setIsWinner();
+							setXSpace([]);
+							setOSpace([]);
+						}}
+					/>
 				</View>
 			</View>
 		</View>
