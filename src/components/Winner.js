@@ -3,12 +3,17 @@ import NativeTachyons from 'react-native-style-tachyons';
 import { View, Text, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+	text: {
+		paddingVertical: 8,
+		width: 142
+	}
+});
 
 function Winner(props) {
 	return (
-		<View>
-			<Text cls='f4'>{props.winner}</Text>
+		<View cls='flx-row jcc' style={styles.text}>
+			<Text cls='f6'>{props.winner}</Text>
 		</View>
 	);
 }

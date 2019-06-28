@@ -41,7 +41,7 @@ function Box(props) {
 	function pressBox() {
 		if (props.turns < 9 && value === '' && !props.isOver) {
 			props.player ? setValue('X') : setValue('O');
-			props.state(!props.player);
+			props.playerState(!props.player);
 			props.setTurns(props.turns + 1);
 			props.usedSpace.push(props.boxNumber);
 			if (props.turns > 3) {
@@ -62,7 +62,7 @@ function Box(props) {
 Box.propTypes = {
 	player: PropTypes.bool,
 	boxNumber: PropTypes.number,
-	state: PropTypes.func,
+	playerState: PropTypes.func,
 	turns: PropTypes.number,
 	setTurns: PropTypes.func,
 	usedSpace: PropTypes.array

@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
 
 function PlayerBox(props) {
 	return (
-		<View cls='flx-row ba mv3'>
+		<View cls='flx-row'>
 			<View cls='br'>
 				<Text
 					cls='pa2'

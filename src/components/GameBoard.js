@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, Dimensions } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import NativeTachyons from 'react-native-style-tachyons';
 import Box from './Box';
 import { BOXES, TEXT, COLORS } from '../constants';
@@ -35,7 +35,7 @@ function GameBoard() {
 			>
 				<Text cls='f3'>{TEXT.WELCOME_TEXT}</Text>
 			</View>
-			<View>
+			<View cls='mh3 mv2 flx-row ba br1'>
 				{isGameOver ? (
 					<Winner winner={isWinner} />
 				) : (
@@ -51,7 +51,7 @@ function GameBoard() {
 						key={box}
 						boxNumber={box}
 						player={isPlayerOne}
-						state={setIsPlayerOne}
+						playerState={setIsPlayerOne}
 						turns={turns}
 						setTurns={setTurns}
 						usedSpace={usedSpace}

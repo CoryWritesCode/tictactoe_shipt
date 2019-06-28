@@ -22,14 +22,14 @@ export const TEXT = {
 export const COLORS = {
 	LIGHT: {
 		SECONDARY: '#666',
-		PRIMARY: '#19e',
-		BACKGROUND: '#ddd',
+		PRIMARY: '#74DBFF',
+		BACKGROUND: '#E5ECEF',
 		APP_BACKGROUND: '#F5FCFF'
 	},
 	DARK: {
 		SECONDARY: '#666',
-		PRIMARY: '#19e',
-		BACKGROUND: '#ddd',
+		PRIMARY: '#74DBFF',
+		BACKGROUND: '#E5ECEF',
 		APP_BACKGROUND: '#F5FCFF'
 	}
 };

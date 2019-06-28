@@ -1,21 +1,25 @@
 import React from 'react';
 import NativeTachyons from 'react-native-style-tachyons';
-import { TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { TouchableOpacity, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import { TEXT } from '../constants';
 
-const styles = StyleSheet.create({});
-
-function ResetBoard() {
+function ResetBoard(props) {
 	return (
 		<TouchableOpacity
-			cls='ba pv2 ph4 top-2'
+			cls='ba pv2 ph4 top-2 br1'
 			accessibilityRole='button'
 			accessibilityLabel={TEXT.RESET}
+			onPress={props.handlePress}
 		>
 			<Text>Reset</Text>
 		</TouchableOpacity>
 	);
 }
+
+ResetBoard.propTypes = {
+	handlePress: PropTypes.func.isRequired,
+	state: PropTypes.func
+};
 
 export default NativeTachyons.wrap(ResetBoard);
