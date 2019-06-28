@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
 import NativeTachyons from 'react-native-style-tachyons';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { Text, StyleSheet, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
+import { WINNERS, TEXT } from '../constants';
 
-const styles = StyleSheet.create({
-	textValue: {
-		fontSize: 26
-	}
-});
+const styles = StyleSheet.create({});
 
 function Box(props) {
 	const [value, setValue] = useState('');
@@ -27,22 +24,38 @@ function Box(props) {
 		tachyonStyle += ' bt';
 	}
 
+	function checkWinner() {
+		WINNERS.forEach(opt => {
+			let option = opt.filter(a => props.usedSpace.includes(a));
+			if (option.length === 3) {
+				props.setGame(true);
+				props.setWinner(props.player ? TEXT.PONE_WINNER : TEXT.PTWO_WINNER);
+				return;
+			} else if (props.turns === 8 && !props.isOver) {
+				props.setGame(true);
+				props.setWinner(TEXT.DRAW);
+			}
+		});
+	}
+
 	function pressBox() {
-		if (props.turns < 9 && value === '') {
+		if (props.turns < 9 && value === '' && !props.isOver) {
 			props.player ? setValue('X') : setValue('O');
 			props.state(!props.player);
 			props.setTurns(props.turns + 1);
+			props.usedSpace.push(props.boxNumber);
+			if (props.turns > 3) {
+				checkWinner();
+			}
 		} else {
 			return;
 		}
 	}
 
 	return (
-		<View>
-			<TouchableOpacity cls={tachyonStyle} onPress={pressBox} activeOpacity={1}>
-				<Text style={styles.textValue}>{value}</Text>
-			</TouchableOpacity>
-		</View>
+		<TouchableOpacity cls={tachyonStyle} onPress={pressBox} activeOpacity={1}>
+			<Text cls='f3'>{value}</Text>
+		</TouchableOpacity>
 	);
 }
 
@@ -51,7 +64,8 @@ Box.propTypes = {
 	boxNumber: PropTypes.number,
 	state: PropTypes.func,
 	turns: PropTypes.number,
-	setTurns: PropTypes.func
+	setTurns: PropTypes.func,
+	usedSpace: PropTypes.array
 };
 
 export default NativeTachyons.wrap(Box);

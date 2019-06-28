@@ -2,23 +2,16 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, Dimensions } from 'react-native';
 import NativeTachyons from 'react-native-style-tachyons';
 import Box from './Box';
-import { BOXES } from '../constants';
+import { BOXES, TEXT, COLORS } from '../constants';
+import PlayerBox from './PlayerBox';
+import Winner from './Winner';
+import ResetBoard from './ResetBoard';
 
 const styles = StyleSheet.create({
 	welcome: {
-		fontSize: 20,
-		textAlign: 'center',
-		margin: 10
+		backgroundColor: COLORS.LIGHT.BACKGROUND,
+		width: '100%'
 	},
-	playerBox: {
-		textAlign: 'center',
-		color: '#333333',
-		marginBottom: 5
-	},
-	activePlayer: {
-		backgroundColor: 'cyan'
-	},
-	inactivePlayer: {},
 	gameboard: {
 		width: '75%'
 	}
@@ -27,23 +20,27 @@ const styles = StyleSheet.create({
 function GameBoard() {
 	const [isPlayerOne, setIsPlayerOne] = useState(true);
 	const [turns, setTurns] = useState(0);
+	const [isWinner, setIsWinner] = useState();
+	const [isGameOver, setIsGameOver] = useState(false);
+	const [xSpace, setXSpace] = useState([]);
+	const [oSpace, setOSpace] = useState([]);
+	let usedSpace = isPlayerOne ? xSpace : oSpace;
 
 	return (
 		<View cls='flx-i aic jcc'>
-			<Text style={styles.welcome}>Welcome to Tic-Tac-Toe!</Text>
-			<View cls='flx-row ba mv3' stlye={styles.playerBox}>
-				<Text
-					cls='pa2'
-					style={isPlayerOne ? styles.activePlayer : styles.inactivePlayer}
-				>
-					Player 1
-				</Text>
-				<Text
-					cls='pa2'
-					style={!isPlayerOne ? styles.activePlayer : styles.inactivePlayer}
-				>
-					Player 2
-				</Text>
+			<View
+				accessibilityLabel={TEXT.WELCOME_TEXT}
+				cls='aic mv3 pv2'
+				style={styles.welcome}
+			>
+				<Text cls='f3'>{TEXT.WELCOME_TEXT}</Text>
+			</View>
+			<View>
+				{isGameOver ? (
+					<Winner winner={isWinner} />
+				) : (
+					<PlayerBox who={isPlayerOne} />
+				)}
 			</View>
 			<View
 				style={styles.gameboard}
@@ -57,8 +54,15 @@ function GameBoard() {
 						state={setIsPlayerOne}
 						turns={turns}
 						setTurns={setTurns}
+						usedSpace={usedSpace}
+						setGame={setIsGameOver}
+						setWinner={setIsWinner}
+						isOver={isGameOver}
 					/>
 				))}
+				<View>
+					<ResetBoard />
+				</View>
 			</View>
 		</View>
 	);

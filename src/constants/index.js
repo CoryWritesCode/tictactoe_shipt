@@ -10,3 +10,26 @@ export const WINNERS = [
 	[0, 4, 8],
 	[2, 4, 6]
 ];
+
+export const TEXT = {
+	WELCOME_TEXT: 'Welcome to Tic-Tac-Toe!',
+	PONE_WINNER: 'Player 1 Wins!',
+	PTWO_WINNER: 'Player 2 Wins!',
+	DRAW: 'No one wins!',
+	RESET: 'Reset the game.'
+};
+
+export const COLORS = {
+	LIGHT: {
+		SECONDARY: '#666',
+		PRIMARY: '#19e',
+		BACKGROUND: '#ddd',
+		APP_BACKGROUND: '#F5FCFF'
+	},
+	DARK: {
+		SECONDARY: '#666',
+		PRIMARY: '#19e',
+		BACKGROUND: '#ddd',
+		APP_BACKGROUND: '#F5FCFF'
+	}
+};

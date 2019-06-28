@@ -21,6 +21,6 @@ Simple application for a coding challange.
 
 ## Other Commands
 
-* `yarn start` - to start the metro bundler
+* `yarn start` - to start the metro bundler (when you run the `ios` or `android` commands this will already start in another terminal window)
 * `yarn open` - to open the project in xcode
 * `yarn clean` - to clear node_modules and get a fresh yarn.lock

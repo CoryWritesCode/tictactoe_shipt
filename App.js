@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, View, SafeAreaView } from 'react-native';
 import NativeTachyons from 'react-native-style-tachyons';
 import GameBoard from './src/components/GameBoard';
+import { COLORS } from './src/constants';
 
 class App extends React.Component {
 	render() {
@@ -15,7 +16,7 @@ class App extends React.Component {
 
 const styles = StyleSheet.create({
 	container: {
-		backgroundColor: '#F5FCFF'
+		backgroundColor: COLORS.LIGHT.APP_BACKGROUND
 	}
 });
 
