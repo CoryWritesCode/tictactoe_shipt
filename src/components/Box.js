@@ -27,19 +27,20 @@ function Box(props) {
 	function checkWinner() {
 		WINNERS.forEach(opt => {
 			let option = opt.filter(a => props.usedSpace.includes(a));
-			if (option.length === 3) {
+			if (option.length == 3) {
 				props.setGame(true);
 				props.setWinner(props.player ? TEXT.PONE_WINNER : TEXT.PTWO_WINNER);
 				return;
-			} else if (props.turns === 8 && !props.isOver) {
-				props.setGame(true);
-				props.setWinner(TEXT.DRAW);
 			}
 		});
+		if (props.turns == 8 && props.winner != '') {
+			props.setGame(true);
+			props.setWinner(TEXT.DRAW);
+		}
 	}
 
 	function pressBox() {
-		if (props.turns < 9 && value === '' && !props.isOver) {
+		if (props.turns < 10 && value == '' && !props.isOver) {
 			props.player ? setValue('X') : setValue('O');
 			props.playerState(!props.player);
 			props.setTurns(props.turns + 1);

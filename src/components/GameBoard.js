@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
 function GameBoard() {
 	const [isPlayerOne, setIsPlayerOne] = useState(true);
 	const [turns, setTurns] = useState(0);
-	const [isWinner, setIsWinner] = useState();
+	const [isWinner, setIsWinner] = useState('');
 	const [isGameOver, setIsGameOver] = useState(false);
 	const [xSpace, setXSpace] = useState([]);
 	const [oSpace, setOSpace] = useState([]);
@@ -60,6 +60,7 @@ function GameBoard() {
 							setGame={setIsGameOver}
 							setWinner={setIsWinner}
 							isOver={isGameOver}
+							winner={isWinner}
 						/>
 					</View>
 				))}
