@@ -2,7 +2,7 @@
 
 Simple application for a coding challange.
 
-![ezgif com-video-to-gif](https://user-images.githubusercontent.com/34924300/60342598-90bd6500-9977-11e9-9def-807b3805386c.gif)
+![ezgif com-video-to-gif (3)](https://user-images.githubusercontent.com/34924300/60350133-8e173b80-9988-11e9-9479-618f636614b7.gif)
 
 ## Tech Stack
 
