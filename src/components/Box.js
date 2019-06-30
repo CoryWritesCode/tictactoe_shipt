@@ -31,7 +31,7 @@ function Box(props) {
 				return;
 			}
 		});
-		if (props.turns == 8 && props.winner != '') {
+		if (props.turns == 8 && props.winner == '') {
 			props.setGame(true);
 			props.setWinner(TEXT.DRAW);
 		}
